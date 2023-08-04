@@ -4,8 +4,8 @@ const MainPage = () => {
   const url = "https://edge-academy.onrender.com";
 
   return (
-    <div className="flex justify-center items-center flex-col gap-5 mt-20">
-      <h1 className="font-bold text-2xl mb-14">Análise de Imagem</h1>
+    <div className="flex justify-center items-center flex-col gap-5 h-[calc(100vh-150px)]">
+      <h1 className="text-2xl mb-10">Análise de Imagem</h1>
       <div class="flex items-center justify-center w-[80%]">
         <label
           for="dropzone-file"

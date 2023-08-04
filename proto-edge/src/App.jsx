@@ -9,7 +9,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path={"*"} element={<Home />}></Route>
-        <Route path={"/login"} element={<Login></Login>}></Route>{" "}
+        <Route
+          path={"/login"}
+          element={<Login type="login"></Login>}
+        ></Route>{" "}
+        <Route
+          path={"/registrar"}
+          element={<Login type="register"></Login>}
+        ></Route>{" "}
         <Route path={"/home"} element={<MainPage></MainPage>}></Route>
       </Routes>
     </>

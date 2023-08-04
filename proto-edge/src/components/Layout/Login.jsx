@@ -1,19 +1,20 @@
 import React from "react";
-import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
-const Login = () => {
+import { Link, useNavigate } from "react-router-dom";
+const Login = ({ type }) => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mt-16">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-20 w-auto"
             src="https://media.discordapp.net/attachments/733806557304848455/1131918091786403921/robozinho.png?width=571&height=585"
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            MEMBER LOGIN
+          <h2 className="mt-7 text-center text-2xl  tracking-tight text-gray-800">
+            {type == "login"
+              ? "Entrar no MedBotics"
+              : "Cadastre-se no MedBotics"}
           </h2>
         </div>
 
@@ -29,7 +30,7 @@ const Login = () => {
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Seu E-mail
+                E-mail
               </label>
               <div className="mt-2">
                 <input
@@ -62,14 +63,6 @@ const Login = () => {
                 <label className="block text-sm font-medium leading-6 text-gray-900">
                   Senha
                 </label>
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
-                  >
-                    Esqueceu a senha?
-                  </a>
-                </div>
               </div>
               <div className="mt-2">
                 <input
@@ -79,6 +72,16 @@ const Login = () => {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {type == "register" && (
+                  <div className="text-sm mt-5 text-end">
+                    <a
+                      href="#"
+                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                    >
+                      Esqueceu a senha?
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -91,15 +94,15 @@ const Login = () => {
               </button>
             </div>
           </form>
-          {/* <p className="mt-10 text-center text-sm text-gray-500">
-            Não é um membro?{" "}
-            <a
-              href="#"
+          <p className="mt-10 text-center text-sm text-gray-500">
+            {type == "login" ? "Não é um membro?" : "Já possui um cadastro?"}
+            <Link
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+              to={type == "login" ? "/registrar" : "/login"}
             >
-              Registre-se
-            </a>
-          </p> */}
+              {type == "login" ? " Registre-se" : " Faça Login"}
+            </Link>
+          </p>
         </div>
       </div>
     </div>

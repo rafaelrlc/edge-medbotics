@@ -19,7 +19,7 @@ const Navbar = () => {
             <span className="text-cyan-300">Med</span>Botics
           </h1>
         </div>
-        <div className="text-white font-bold flex gap-12 items-center">
+        <div className="text-white font-bold md:flex hidden gap-12 items-center ">
           <a
             className="text-lg hover:cursor-pointer"
             onClick={() => navigate("/login")}
@@ -27,7 +27,7 @@ const Navbar = () => {
             LOGIN
           </a>
           <a
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/register")}
             className="text-lg hover:cursor-pointer"
           >
             REGISTRAR
