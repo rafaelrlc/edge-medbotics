@@ -3,6 +3,7 @@ import Home from "./components/Layout/Home";
 import Login from "./components/Layout/Login";
 import MainPage from "./components/Layout/MainPage";
 import Navbar from "./components/Layout/Navbar";
+import Footer from "./components/Layout/Footer";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
         ></Route>{" "}
         <Route path={"/home"} element={<MainPage></MainPage>}></Route>
       </Routes>
+      <Footer />
     </>
   );
 }
