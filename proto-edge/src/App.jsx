@@ -18,7 +18,7 @@ function App() {
           path={"/registrar"}
           element={<Login type="register"></Login>}
         ></Route>{" "}
-        <Route path={"/home"} element={<MainPage></MainPage>}></Route>
+        <Route path={"/workspace"} element={<MainPage></MainPage>}></Route>
       </Routes>
       <Footer />
     </>
